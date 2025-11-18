@@ -6,18 +6,21 @@ import meditationReducer from '../slices/meditationSlice';
 import favouritesReducer from '../slices/favouritesSlice';
 import themeReducer from '../slices/themeSlice';
 
+// Check if we're running on web
+const isWeb = typeof window !== 'undefined';
+
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
   whitelist: ['auth', 'favourites', 'theme'],
 };
 
-const persistedAuthReducer = persistReducer(persistConfig, authReducer);
-const persistedFavouritesReducer = persistReducer(
+const persistedAuthReducer = isWeb ? authReducer : persistReducer(persistConfig, authReducer);
+const persistedFavouritesReducer = isWeb ? favouritesReducer : persistReducer(
   { ...persistConfig, key: 'favourites' },
   favouritesReducer
 );
-const persistedThemeReducer = persistReducer(
+const persistedThemeReducer = isWeb ? themeReducer : persistReducer(
   { ...persistConfig, key: 'theme' },
   themeReducer
 );
@@ -37,7 +40,7 @@ export const store = configureStore({
     }),
 });
 
-export const persistor = persistStore(store);
+export const persistor = isWeb ? null : persistStore(store);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../store/store';
@@ -198,7 +199,7 @@ const AppStack = () => {
 };
 
 // Root Navigator
-export const RootNavigator = () => {
+const RootNavigatorStack = () => {
   const dispatch = useDispatch<AppDispatch>();
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
 
@@ -218,24 +219,37 @@ export const RootNavigator = () => {
   }, [dispatch]);
 
   return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      {isLoggedIn ? (
+        <Stack.Screen
+          name="App"
+          component={AppStack}
+        />
+      ) : (
+        <Stack.Screen
+          name="Auth"
+          component={AuthStack}
+        />
+      )}
+    </Stack.Navigator>
+  );
+};
+
+// Wrap with NavigationContainer only on native
+export const RootNavigator = () => {
+  const isWeb = typeof window !== 'undefined';
+
+  if (isWeb) {
+    return <RootNavigatorStack />;
+  }
+
+  return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        {isLoggedIn ? (
-          <Stack.Screen
-            name="App"
-            component={AppStack}
-          />
-        ) : (
-          <Stack.Screen
-            name="Auth"
-            component={AuthStack}
-          />
-        )}
-      </Stack.Navigator>
+      <RootNavigatorStack />
     </NavigationContainer>
   );
 };

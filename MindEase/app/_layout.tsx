@@ -11,13 +11,22 @@ export const unstable_settings = {
 };
 
 export default function RootLayout() {
+  const isWeb = typeof window !== 'undefined';
+  
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <RootNavigator />
-          <StatusBar barStyle="auto" />
-        </PersistGate>
+        {isWeb ? (
+          <>
+            <RootNavigator />
+            <StatusBar barStyle="auto" />
+          </>
+        ) : (
+          <PersistGate loading={null} persistor={persistor!}>
+            <RootNavigator />
+            <StatusBar barStyle="auto" />
+          </PersistGate>
+        )}
       </Provider>
     </GestureHandlerRootView>
   );
