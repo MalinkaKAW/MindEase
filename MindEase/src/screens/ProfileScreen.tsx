@@ -150,9 +150,9 @@ export const ProfileScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
         >
           <View style={styles.settingContent}>
             {isDarkMode ? (
-              <Moon size={20} color={colorScheme.primary} />
+              <Moon width={20} height={20} color={colorScheme.primary} />
             ) : (
-              <Sun size={20} color={colorScheme.primary} />
+              <Sun width={20} height={20} color={colorScheme.primary} />
             )}
             <Text style={[styles.settingLabel, { color: colorScheme.text }]}>
               Dark Mode
@@ -175,7 +175,7 @@ export const ProfileScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
               About App
             </Text>
           </View>
-          <ChevronRight size={20} color={colorScheme.textSecondary} />
+          <ChevronRight width={20} height={20} color={colorScheme.textSecondary} />
         </TouchableOpacity>
       </View>
 
@@ -187,7 +187,7 @@ export const ProfileScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
         ]}
         onPress={handleLogout}
       >
-        <LogOut size={20} color="#fff" />
+        <LogOut width={20} height={20} color="#fff" />
         <Text style={styles.logoutButtonText}>Logout</Text>
       </TouchableOpacity>
     </ScrollView>
@@ -200,52 +200,55 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingHorizontal: Spacing.lg,
-    paddingVertical: Spacing.lg,
+    paddingVertical: Spacing.xl,
   },
   profileCard: {
-    borderRadius: BorderRadius.lg,
-    borderWidth: 1,
-    padding: Spacing.lg,
-    marginBottom: Spacing.lg,
+    borderRadius: BorderRadius.xl,
+    borderWidth: 0,
+    padding: Spacing.xl,
+    marginBottom: Spacing.xl,
     ...Shadows.medium,
   },
   profileHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: Spacing.md,
+    marginBottom: Spacing.lg,
   },
   avatar: {
-    fontSize: 48,
-    marginRight: Spacing.md,
+    fontSize: 56,
+    marginRight: Spacing.lg,
   },
   username: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: '600',
     marginBottom: Spacing.sm,
+    letterSpacing: -0.5,
   },
   email: {
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: '400',
+    lineHeight: 20,
   },
   userInfo: {
     borderTopWidth: 1,
-    borderTopColor: 'rgba(0,0,0,0.1)',
-    paddingTop: Spacing.md,
+    borderTopColor: 'rgba(0,0,0,0.08)',
+    paddingTop: Spacing.lg,
   },
   infoLabel: {
     fontSize: 12,
-    fontWeight: '400',
+    fontWeight: '500',
     marginBottom: Spacing.sm,
+    letterSpacing: 0.3,
   },
   infoValue: {
-    fontSize: 16,
-    fontWeight: '400',
+    fontSize: 18,
+    fontWeight: '500',
   },
   statsContainer: {
-    borderRadius: BorderRadius.lg,
-    borderWidth: 1,
+    borderRadius: BorderRadius.xl,
+    borderWidth: 0,
     padding: Spacing.lg,
-    marginBottom: Spacing.lg,
+    marginBottom: Spacing.xl,
     flexDirection: 'row',
     justifyContent: 'space-between',
     ...Shadows.medium,
@@ -255,37 +258,39 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   statIcon: {
-    fontSize: 24,
+    fontSize: 32,
     marginBottom: Spacing.sm,
   },
   statValue: {
-    fontSize: 20,
-    fontWeight: '600',
-    marginBottom: Spacing.sm,
+    fontSize: 24,
+    fontWeight: '700',
+    marginBottom: Spacing.xs,
   },
   statLabel: {
     fontSize: 12,
-    fontWeight: '400',
+    fontWeight: '500',
+    letterSpacing: 0.2,
   },
   settingsSection: {
-    borderRadius: BorderRadius.lg,
-    borderWidth: 1,
+    borderRadius: BorderRadius.xl,
+    borderWidth: 0,
     overflow: 'hidden',
-    marginBottom: Spacing.lg,
+    marginBottom: Spacing.xl,
     ...Shadows.medium,
   },
   sectionTitle: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '600',
     paddingHorizontal: Spacing.lg,
-    paddingVertical: Spacing.md,
+    paddingVertical: Spacing.lg,
+    letterSpacing: -0.3,
   },
   settingItem: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: Spacing.lg,
-    paddingVertical: Spacing.md,
+    paddingVertical: Spacing.lg,
     borderBottomWidth: 1,
   },
   settingContent: {
@@ -298,24 +303,27 @@ const styles = StyleSheet.create({
   },
   settingLabel: {
     fontSize: 16,
-    fontWeight: '400',
+    fontWeight: '500',
   },
   settingValue: {
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: '600',
+    letterSpacing: 0.2,
   },
   logoutButton: {
     flexDirection: 'row',
-    paddingVertical: Spacing.md,
-    borderRadius: BorderRadius.md,
+    paddingVertical: Spacing.lg,
+    borderRadius: BorderRadius.xl,
     alignItems: 'center',
     justifyContent: 'center',
     gap: Spacing.md,
+    marginTop: Spacing.md,
   },
   logoutButtonText: {
     color: '#fff',
     fontSize: 16,
     fontWeight: '600',
+    letterSpacing: 0.3,
   },
 });
 

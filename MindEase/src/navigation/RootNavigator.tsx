@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../store/store';
@@ -175,7 +174,7 @@ const AppStack = () => {
         component={HomeStack}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({ color }) => <Home size={24} color={color} />,
+          tabBarIcon: ({ color }) => <Home width={24} height={24} color={color} />,
         }}
       />
       <Tab.Screen
@@ -183,7 +182,7 @@ const AppStack = () => {
         component={FavouritesStack}
         options={{
           tabBarLabel: 'Favourites',
-          tabBarIcon: ({ color }) => <Heart size={24} color={color} />,
+          tabBarIcon: ({ color }) => <Heart width={24} height={24} color={color} />,
         }}
       />
       <Tab.Screen
@@ -191,7 +190,7 @@ const AppStack = () => {
         component={ProfileStack}
         options={{
           tabBarLabel: 'Profile',
-          tabBarIcon: ({ color }) => <User size={24} color={color} />,
+          tabBarIcon: ({ color }) => <User width={24} height={24} color={color} />,
         }}
       />
     </Tab.Navigator>

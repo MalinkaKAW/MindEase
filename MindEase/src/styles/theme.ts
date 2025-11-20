@@ -1,29 +1,29 @@
 export const Colors = {
   light: {
-    primary: '#06B6D4',
-    secondary: '#8B5CF6',
-    accent: '#EC4899',
-    background: '#F8FAFC',
+    primary: '#4F9FD8',      // Soft calming blue
+    secondary: '#7B68B6',    // Soft purple
+    accent: '#B5A7E0',       // Light lavender
+    background: '#F5F7FA',   // Soft off-white
     card: '#FFFFFF',
-    text: '#1E293B',
-    textSecondary: '#64748B',
-    border: '#E2E8F0',
-    success: '#10B981',
-    warning: '#F59E0B',
-    error: '#EF4444',
+    text: '#2C3E50',         // Dark slate
+    textSecondary: '#7F8C8D', // Medium gray
+    border: '#E8EEF5',       // Light blue-gray
+    success: '#27AE60',      // Calm green
+    warning: '#E8A741',      // Soft gold
+    error: '#E57373',        // Soft red
   },
   dark: {
-    primary: '#06B6D4',
-    secondary: '#A78BFA',
-    accent: '#F472B6',
-    background: '#0F172A',
-    card: '#1E293B',
-    text: '#F1F5F9',
-    textSecondary: '#CBD5E1',
-    border: '#334155',
-    success: '#34D399',
-    warning: '#FBBF24',
-    error: '#F87171',
+    primary: '#5DADE2',      // Soft blue
+    secondary: '#9B8DC8',    // Soft purple
+    accent: '#C8B8E0',       // Light lavender
+    background: '#1A1F2E',   // Dark slate
+    card: '#2D3748',         // Slightly lighter dark
+    text: '#E8EEF5',         // Light blue-gray
+    textSecondary: '#A0AEC0', // Muted gray
+    border: '#3D4556',       // Dark border
+    success: '#48BB78',      // Soft green
+    warning: '#F6AD55',      // Soft orange
+    error: '#FC8181',        // Soft red
   },
 };
 
@@ -34,13 +34,14 @@ export const Spacing = {
   lg: 16,
   xl: 20,
   xxl: 24,
+  xxxl: 32,
 };
 
 export const BorderRadius = {
-  sm: 4,
-  md: 8,
-  lg: 12,
-  xl: 16,
+  sm: 8,
+  md: 12,
+  lg: 16,
+  xl: 20,
   full: 9999,
 };
 

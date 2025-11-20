@@ -53,7 +53,8 @@ const MeditationCard: React.FC<{
           </View>
           <TouchableOpacity onPress={onFavouritePress} style={styles.favouriteBtn}>
             <Heart
-              size={20}
+              width={20}
+              height={20}
               color={isFavourite ? Colors.light.error : colorScheme.textSecondary}
               fill={isFavourite ? Colors.light.error : 'none'}
             />
@@ -139,10 +140,10 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         ]}
       >
         <Text style={[styles.headerTitle, { color: colorScheme.text }]}>
-          Welcome, {user?.username || 'Friend'}! 🧘
+          Hello, {user?.username || 'Friend'} 🧘
         </Text>
         <Text style={[styles.headerSubtitle, { color: colorScheme.textSecondary }]}>
-          Explore daily meditation tips & wellness quotes
+          Find your inner peace today
         </Text>
       </View>
 
@@ -184,17 +185,19 @@ const styles = StyleSheet.create({
   },
   header: {
     paddingHorizontal: Spacing.lg,
-    paddingVertical: Spacing.lg,
-    borderBottomWidth: 1,
+    paddingVertical: Spacing.xl,
+    borderBottomWidth: 0,
   },
   headerTitle: {
-    fontSize: 20,
-    fontWeight: '700',
+    fontSize: 24,
+    fontWeight: '600',
     marginBottom: Spacing.sm,
+    letterSpacing: -0.5,
   },
   headerSubtitle: {
-    fontSize: 13,
+    fontSize: 14,
     fontWeight: '400',
+    opacity: 0.7,
   },
   centerContainer: {
     flex: 1,
@@ -203,45 +206,49 @@ const styles = StyleSheet.create({
   },
   listContent: {
     paddingHorizontal: Spacing.lg,
-    paddingVertical: Spacing.md,
+    paddingVertical: Spacing.lg,
   },
   card: {
-    marginBottom: Spacing.md,
-    borderRadius: BorderRadius.lg,
-    borderWidth: 1,
+    marginBottom: Spacing.lg,
+    borderRadius: BorderRadius.xl,
+    borderWidth: 0,
     overflow: 'hidden',
     ...Shadows.medium,
   },
   cardContent: {
-    padding: Spacing.md,
+    padding: Spacing.lg,
   },
   cardHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: Spacing.sm,
+    marginBottom: Spacing.md,
   },
   icon: {
-    fontSize: 28,
-    marginRight: Spacing.md,
+    fontSize: 32,
+    marginRight: Spacing.lg,
   },
   category: {
     fontSize: 12,
     fontWeight: '600',
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
   },
   favouriteBtn: {
     padding: Spacing.sm,
-    marginLeft: Spacing.sm,
+    marginLeft: 'auto',
   },
   quote: {
     fontSize: 16,
-    fontWeight: '400',
-    marginBottom: Spacing.sm,
-    lineHeight: 24,
+    fontWeight: '500',
+    marginBottom: Spacing.md,
+    lineHeight: 26,
+    letterSpacing: 0.3,
   },
   author: {
     fontSize: 12,
-    fontWeight: '400',
+    fontWeight: '500',
     fontStyle: 'italic',
+    opacity: 0.8,
   },
 });
 

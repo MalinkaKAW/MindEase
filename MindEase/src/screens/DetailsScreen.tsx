@@ -42,7 +42,7 @@ export const DetailsScreen: React.FC<{ route: any; navigation: any }> = ({
   const isFavourite = favourites.some((fav) => fav.id === tip.id);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: ReturnType<typeof setTimeout>;
 
     if (isBreathing && timeLeft > 0) {
       interval = setTimeout(() => {
@@ -102,7 +102,8 @@ export const DetailsScreen: React.FC<{ route: any; navigation: any }> = ({
           <Text style={styles.largeIcon}>{tip.icon}</Text>
           <TouchableOpacity onPress={handleFavourite} style={styles.favouriteBtn}>
             <Heart
-              size={24}
+              width={24}
+              height={24}
               color={isFavourite ? Colors.light.error : colorScheme.textSecondary}
               fill={isFavourite ? Colors.light.error : 'none'}
             />
@@ -249,113 +250,119 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingHorizontal: Spacing.lg,
-    paddingVertical: Spacing.lg,
+    paddingVertical: Spacing.xl,
   },
   quoteCard: {
-    borderRadius: BorderRadius.lg,
-    borderWidth: 1,
-    padding: Spacing.lg,
-    marginBottom: Spacing.lg,
+    borderRadius: BorderRadius.xl,
+    borderWidth: 0,
+    padding: Spacing.xl,
+    marginBottom: Spacing.xl,
     ...Shadows.medium,
   },
   cardHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: Spacing.md,
+    marginBottom: Spacing.lg,
   },
   largeIcon: {
-    fontSize: 48,
+    fontSize: 56,
   },
   favouriteBtn: {
     padding: Spacing.md,
   },
   badgeContainer: {
     flexDirection: 'row',
-    gap: Spacing.sm,
-    marginBottom: Spacing.md,
+    gap: Spacing.md,
+    marginBottom: Spacing.lg,
   },
   badge: {
-    paddingHorizontal: Spacing.md,
+    paddingHorizontal: Spacing.lg,
     paddingVertical: Spacing.sm,
     borderRadius: BorderRadius.full,
   },
   badgeText: {
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: '600',
+    letterSpacing: 0.2,
   },
   quote: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: '600',
-    marginBottom: Spacing.md,
-    lineHeight: 28,
+    marginBottom: Spacing.lg,
+    lineHeight: 32,
+    letterSpacing: -0.3,
   },
   author: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '400',
     fontStyle: 'italic',
+    lineHeight: 20,
   },
   breathingSection: {
-    borderRadius: BorderRadius.lg,
-    borderWidth: 1,
-    padding: Spacing.lg,
-    marginBottom: Spacing.lg,
+    borderRadius: BorderRadius.xl,
+    borderWidth: 0,
+    padding: Spacing.xl,
+    marginBottom: Spacing.xl,
     ...Shadows.medium,
   },
   sectionTitle: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '600',
-    marginBottom: Spacing.lg,
+    marginBottom: Spacing.xl,
+    letterSpacing: -0.3,
   },
   breathingContainer: {
     alignItems: 'center',
     marginBottom: Spacing.xl,
   },
   breathingCircle: {
-    width: 160,
-    height: 160,
-    borderRadius: 80,
+    width: 180,
+    height: 180,
+    borderRadius: 90,
     justifyContent: 'center',
     alignItems: 'center',
     ...Shadows.heavy,
   },
   actionText: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '600',
+    letterSpacing: 0.3,
   },
   timeText: {
     color: '#fff',
-    fontSize: 32,
+    fontSize: 48,
     fontWeight: '700',
-    marginTop: Spacing.sm,
+    marginTop: Spacing.md,
   },
   instructions: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '400',
     textAlign: 'center',
-    marginBottom: Spacing.lg,
-    lineHeight: 20,
+    marginBottom: Spacing.xl,
+    lineHeight: 22,
   },
   breathButton: {
-    paddingVertical: Spacing.md,
-    borderRadius: BorderRadius.md,
+    paddingVertical: Spacing.lg,
+    borderRadius: BorderRadius.xl,
     alignItems: 'center',
   },
   breathButtonText: {
     color: '#fff',
     fontSize: 16,
     fontWeight: '600',
+    letterSpacing: 0.3,
   },
   tipsSection: {
-    borderRadius: BorderRadius.lg,
-    borderWidth: 1,
-    padding: Spacing.lg,
-    marginBottom: Spacing.lg,
+    borderRadius: BorderRadius.xl,
+    borderWidth: 0,
+    padding: Spacing.xl,
+    marginBottom: Spacing.xl,
     ...Shadows.medium,
   },
   tipsList: {
-    gap: Spacing.md,
+    gap: Spacing.lg,
   },
   tipItem: {
     flexDirection: 'row',
@@ -363,15 +370,15 @@ const styles = StyleSheet.create({
     gap: Spacing.md,
   },
   tipBullet: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '600',
     marginTop: 2,
   },
   tipText: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '400',
     flex: 1,
-    lineHeight: 20,
+    lineHeight: 24,
   },
 });
 

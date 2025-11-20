@@ -40,7 +40,7 @@ export default function App() {
   return (
     <GestureHandlerRootView style={styles.container} onLayout={onLayoutRootView}>
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+        <PersistGate loading={null} persistor={persistor!}>
           <RootNavigator />
         </PersistGate>
       </Provider>

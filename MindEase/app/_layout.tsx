@@ -19,12 +19,12 @@ export default function RootLayout() {
         {isWeb ? (
           <>
             <RootNavigator />
-            <StatusBar barStyle="auto" />
+            <StatusBar />
           </>
         ) : (
           <PersistGate loading={null} persistor={persistor!}>
             <RootNavigator />
-            <StatusBar barStyle="auto" />
+            <StatusBar />
           </PersistGate>
         )}
       </Provider>

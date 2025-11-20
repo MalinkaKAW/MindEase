@@ -49,7 +49,8 @@ const FavouriteCard: React.FC<{
           </View>
           <TouchableOpacity onPress={onRemove} style={styles.removeBtn}>
             <Heart
-              size={20}
+              width={20}
+              height={20}
               color={Colors.light.error}
               fill={Colors.light.error}
             />
@@ -161,17 +162,19 @@ const styles = StyleSheet.create({
   },
   header: {
     paddingHorizontal: Spacing.lg,
-    paddingVertical: Spacing.lg,
-    borderBottomWidth: 1,
+    paddingVertical: Spacing.xl,
+    borderBottomWidth: 0,
   },
   headerTitle: {
-    fontSize: 20,
+    fontSize: 28,
     fontWeight: '700',
     marginBottom: Spacing.sm,
+    letterSpacing: -0.5,
   },
   headerSubtitle: {
-    fontSize: 13,
+    fontSize: 14,
     fontWeight: '400',
+    lineHeight: 20,
   },
   emptyContainer: {
     flex: 1,
@@ -179,46 +182,49 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyIcon: {
-    fontSize: 64,
+    fontSize: 72,
     marginBottom: Spacing.lg,
   },
   emptyTitle: {
     fontSize: 24,
     fontWeight: '600',
-    marginBottom: Spacing.sm,
+    marginBottom: Spacing.md,
+    letterSpacing: -0.3,
   },
   emptySubtitle: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '400',
     textAlign: 'center',
     paddingHorizontal: Spacing.lg,
+    lineHeight: 22,
   },
   listContent: {
     paddingHorizontal: Spacing.lg,
-    paddingVertical: Spacing.md,
+    paddingVertical: Spacing.lg,
   },
   card: {
-    marginBottom: Spacing.md,
-    borderRadius: BorderRadius.lg,
-    borderWidth: 1,
+    marginBottom: Spacing.lg,
+    borderRadius: BorderRadius.xl,
+    borderWidth: 0,
     overflow: 'hidden',
     ...Shadows.medium,
   },
   cardContent: {
-    padding: Spacing.md,
+    padding: Spacing.lg,
   },
   cardHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: Spacing.sm,
+    marginBottom: Spacing.md,
   },
   icon: {
-    fontSize: 28,
-    marginRight: Spacing.md,
+    fontSize: 36,
+    marginRight: Spacing.lg,
   },
   category: {
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: '600',
+    letterSpacing: 0.2,
   },
   removeBtn: {
     padding: Spacing.sm,
@@ -226,12 +232,13 @@ const styles = StyleSheet.create({
   },
   quote: {
     fontSize: 16,
-    fontWeight: '400',
-    marginBottom: Spacing.sm,
-    lineHeight: 24,
+    fontWeight: '500',
+    marginBottom: Spacing.md,
+    lineHeight: 26,
+    letterSpacing: 0.3,
   },
   author: {
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: '400',
     fontStyle: 'italic',
   },
