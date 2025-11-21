@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Alert,
   ScrollView,
+  Image,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../store/store';
@@ -14,6 +15,7 @@ import { logout } from '../slices/authSlice';
 import { toggleDarkMode } from '../slices/themeSlice';
 import { storageService } from '../services/storageService';
 import { ChevronRight, Moon, Sun, LogOut } from 'react-native-feather';
+import { images } from '../assets/images';
 
 export const ProfileScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const dispatch = useDispatch<AppDispatch>();
@@ -65,20 +67,10 @@ export const ProfileScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
         ]}
       >
         <View style={styles.profileHeader}>
-          <View
-            style={[
-              styles.avatarImage,
-              {
-                backgroundColor: colorScheme.card,
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderWidth: 2,
-                borderColor: colorScheme.primary,
-              },
-            ]}
-          >
-            <Text style={{ fontSize: 50 }}>👧</Text>
-          </View>
+          <Image
+            source={images.profile}
+            style={styles.avatarImage}
+          />
           <View style={{ flex: 1 }}>
             <Text style={[styles.username, { color: colorScheme.text }]}>
               {user?.username || 'User'}

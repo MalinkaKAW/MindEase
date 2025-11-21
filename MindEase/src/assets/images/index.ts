@@ -5,5 +5,5 @@ export const images = {
   breathing: require('./breathing.svg'),
   tips: require('./tips.svg'),
   favorites: require('./favorites.svg'),
-  profile: require('./profile.png'),
+  profile: require('./image.png'),
 };
