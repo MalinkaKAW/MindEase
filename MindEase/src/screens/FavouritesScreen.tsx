@@ -6,12 +6,14 @@ import {
   TouchableOpacity,
   StyleSheet,
   Alert,
+  Image,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../store/store';
 import { Colors, Spacing, BorderRadius, Shadows } from '../styles/theme';
 import { removeFavourite } from '../slices/favouritesSlice';
 import { Heart } from 'react-native-feather';
+import { images } from '../assets/images';
 
 const FavouriteCard: React.FC<{
   item: any;
@@ -128,12 +130,15 @@ export const FavouritesScreen: React.FC<{ navigation: any }> = ({ navigation }) 
 
       {favourites.length === 0 ? (
         <View style={styles.emptyContainer}>
-          <Text style={styles.emptyIcon}>📭</Text>
+          <Image
+            source={images.favorites}
+            style={styles.emptyImage}
+          />
           <Text style={[styles.emptyTitle, { color: colorScheme.text }]}>
             No Favourites Yet
           </Text>
           <Text style={[styles.emptySubtitle, { color: colorScheme.textSecondary }]}>
-            Start adding meditation tips to your favorites! 💖
+            Start adding meditation tips to your favorites!
           </Text>
         </View>
       ) : (
@@ -183,6 +188,11 @@ const styles = StyleSheet.create({
   },
   emptyIcon: {
     fontSize: 72,
+    marginBottom: Spacing.lg,
+  },
+  emptyImage: {
+    width: 100,
+    height: 100,
     marginBottom: Spacing.lg,
   },
   emptyTitle: {

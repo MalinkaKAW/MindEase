@@ -1,0 +1,12 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Breathing lungs -->
+  <ellipse cx="35" cy="50" rx="18" ry="25" fill="#5DADE2" opacity="0.7"/>
+  <ellipse cx="65" cy="50" rx="18" ry="25" fill="#5DADE2" opacity="0.7"/>
+  <!-- Air flow lines -->
+  <path d="M20 50 Q15 45 12 50" stroke="#5DADE2" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M80 50 Q85 45 88 50" stroke="#5DADE2" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M20 60 Q15 65 12 60" stroke="#5DADE2" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M80 60 Q85 65 88 60" stroke="#5DADE2" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Center line -->
+  <line x1="50" y1="30" x2="50" y2="70" stroke="#5DADE2" stroke-width="1.5" opacity="0.5"/>
+</svg>

@@ -7,6 +7,7 @@ import {
   StyleSheet,
   ActivityIndicator,
   RefreshControl,
+  Image,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../store/store';
@@ -15,6 +16,7 @@ import { meditationService } from '../services';
 import { Colors, Spacing, BorderRadius, Shadows } from '../styles/theme';
 import { Heart } from 'react-native-feather';
 import { addFavourite, removeFavourite } from '../slices/favouritesSlice';
+import { images } from '../assets/images';
 
 const MeditationCard: React.FC<{
   item: any;
@@ -139,7 +141,10 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           { backgroundColor: colorScheme.card },
         ]}
       >
-        <Text style={styles.headerEmoji}>🧘‍♀️</Text>
+        <Image
+          source={images.meditation}
+          style={styles.headerImage}
+        />
         <Text style={[styles.headerTitle, { color: colorScheme.text }]}>
           Hello, {user?.username || 'Friend'}
         </Text>
@@ -150,10 +155,27 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
       {isLoading && tips.length === 0 ? (
         <View style={styles.centerContainer}>
+          <Image
+            source={images.breathing}
+            style={styles.loadingImage}
+          />
           <ActivityIndicator size="large" color={colorScheme.primary} />
+          <Text style={[styles.loadingText, { color: colorScheme.text }]}>
+            Loading wellness tips...
+          </Text>
         </View>
       ) : (
-        <FlatList
+        <>
+          <View style={styles.sectionHeaderContainer}>
+            <Image
+              source={images.tips}
+              style={styles.sectionHeaderImage}
+            />
+            <Text style={[styles.sectionHeader, { color: colorScheme.text }]}>
+              Wellness Tips
+            </Text>
+          </View>
+          <FlatList
           data={tips}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
@@ -175,6 +197,7 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           }
           showsVerticalScrollIndicator={false}
         />
+        </>
       )}
     </View>
   );
@@ -193,6 +216,12 @@ const styles = StyleSheet.create({
     fontSize: 48,
     marginBottom: Spacing.md,
     textAlign: 'center',
+  },
+  headerImage: {
+    width: 80,
+    height: 80,
+    marginBottom: Spacing.md,
+    alignSelf: 'center',
   },
   headerTitle: {
     fontSize: 24,
@@ -213,6 +242,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.lg,
     letterSpacing: -0.3,
   },
+  sectionHeaderContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: Spacing.lg,
+    marginTop: Spacing.lg,
+    marginBottom: Spacing.md,
+  },
+  sectionHeaderImage: {
+    width: 28,
+    height: 28,
+    marginRight: Spacing.md,
+  },
   centerContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -220,6 +261,11 @@ const styles = StyleSheet.create({
   },
   loadingEmoji: {
     fontSize: 64,
+    marginBottom: Spacing.lg,
+  },
+  loadingImage: {
+    width: 100,
+    height: 100,
     marginBottom: Spacing.lg,
   },
   loadingText: {
