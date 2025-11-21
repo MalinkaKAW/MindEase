@@ -6,4 +6,5 @@ export const images = {
   tips: require('./tips.svg'),
   favorites: require('./favorites.svg'),
   profile: require('./profile.svg'),
+  profileWebp: require('./profile.webp'),
 };
