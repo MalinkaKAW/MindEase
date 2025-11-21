@@ -1,6 +1,10 @@
 <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Heart -->
-  <path d="M50 90 C25 70 10 55 10 40 C10 25 20 15 30 15 C40 15 50 25 50 25 C50 25 60 15 70 15 C80 15 90 25 90 40 C90 55 75 70 50 90Z" fill="#B5A7E0"/>
+  <!-- Heart shape with gradient effect -->
+  <path d="M50 95 C20 75 5 60 5 45 C5 28 18 15 30 15 C40 15 50 23 50 23 C50 23 60 15 70 15 C82 15 95 28 95 45 C95 60 80 75 50 95Z" fill="#E8A0BF" stroke="#D8689D" stroke-width="1"/>
+  <!-- Inner heart highlights -->
+  <path d="M50 95 C20 75 8 60 8 45 C8 30 20 20 32 20 C42 20 50 27 50 27 C50 27 58 20 68 20 C80 20 92 30 92 45 C92 60 80 75 50 95Z" fill="#E8A0BF" opacity="0.8"/>
   <!-- Shine effect -->
-  <circle cx="35" cy="35" r="8" fill="white" opacity="0.6"/>
+  <circle cx="32" cy="32" r="10" fill="white" opacity="0.7"/>
+  <!-- Heartbeat pulse -->
+  <path d="M45 80 L48 75 L50 78 L52 73 L55 80" stroke="#E74C3C" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
 </svg>
