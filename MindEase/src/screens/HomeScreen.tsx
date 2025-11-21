@@ -136,14 +136,15 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       <View
         style={[
           styles.header,
-          { backgroundColor: colorScheme.card, borderBottomColor: colorScheme.border },
+          { backgroundColor: colorScheme.card },
         ]}
       >
+        <Text style={styles.headerEmoji}>🧘‍♀️</Text>
         <Text style={[styles.headerTitle, { color: colorScheme.text }]}>
-          Hello, {user?.username || 'Friend'} 🧘
+          Hello, {user?.username || 'Friend'}
         </Text>
         <Text style={[styles.headerSubtitle, { color: colorScheme.textSecondary }]}>
-          Find your inner peace today
+          ✨ Find your inner peace today
         </Text>
       </View>
 
@@ -188,6 +189,11 @@ const styles = StyleSheet.create({
     paddingVertical: Spacing.xl,
     borderBottomWidth: 0,
   },
+  headerEmoji: {
+    fontSize: 48,
+    marginBottom: Spacing.md,
+    textAlign: 'center',
+  },
   headerTitle: {
     fontSize: 24,
     fontWeight: '600',
@@ -199,10 +205,27 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     opacity: 0.7,
   },
+  sectionHeader: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginBottom: Spacing.lg,
+    marginTop: Spacing.lg,
+    paddingHorizontal: Spacing.lg,
+    letterSpacing: -0.3,
+  },
   centerContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  loadingEmoji: {
+    fontSize: 64,
+    marginBottom: Spacing.lg,
+  },
+  loadingText: {
+    marginTop: Spacing.lg,
+    fontSize: 16,
+    fontWeight: '500',
   },
   listContent: {
     paddingHorizontal: Spacing.lg,

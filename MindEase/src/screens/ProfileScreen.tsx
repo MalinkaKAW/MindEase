@@ -150,12 +150,12 @@ export const ProfileScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
         >
           <View style={styles.settingContent}>
             {isDarkMode ? (
-              <Moon width={20} height={20} color={colorScheme.primary} />
-            ) : (
               <Sun width={20} height={20} color={colorScheme.primary} />
+            ) : (
+              <Moon width={20} height={20} color={colorScheme.primary} />
             )}
             <Text style={[styles.settingLabel, { color: colorScheme.text }]}>
-              Dark Mode
+              {isDarkMode ? 'Light Mode' : 'Dark Mode'}
             </Text>
           </View>
           <Text style={[styles.settingValue, { color: colorScheme.textSecondary }]}>

@@ -82,9 +82,9 @@ export const RegisterScreen: React.FC<{ navigation: any }> = ({ navigation }) =>
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
-          <Text style={styles.icon}>🧘</Text>
+          <Text style={styles.icon}>🌸</Text>
           <Text style={styles.title}>Join MindEase</Text>
-          <Text style={styles.subtitle}>Start Your Wellness Journey</Text>
+          <Text style={styles.subtitle}>✨ Start your wellness journey today 🌿</Text>
         </View>
 
         <View style={styles.form}>

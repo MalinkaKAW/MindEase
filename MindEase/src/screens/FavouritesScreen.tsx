@@ -119,7 +119,7 @@ export const FavouritesScreen: React.FC<{ navigation: any }> = ({ navigation }) 
         ]}
       >
         <Text style={[styles.headerTitle, { color: colorScheme.text }]}>
-          ❤️ My Favourites
+          💝 My Favourites
         </Text>
         <Text style={[styles.headerSubtitle, { color: colorScheme.textSecondary }]}>
           {favourites.length} {favourites.length === 1 ? 'item' : 'items'} saved
@@ -128,12 +128,12 @@ export const FavouritesScreen: React.FC<{ navigation: any }> = ({ navigation }) 
 
       {favourites.length === 0 ? (
         <View style={styles.emptyContainer}>
-          <Text style={styles.emptyIcon}>💭</Text>
+          <Text style={styles.emptyIcon}>📭</Text>
           <Text style={[styles.emptyTitle, { color: colorScheme.text }]}>
             No Favourites Yet
           </Text>
           <Text style={[styles.emptySubtitle, { color: colorScheme.textSecondary }]}>
-            Start adding meditation tips to your favorites!
+            Start adding meditation tips to your favorites! 💖
           </Text>
         </View>
       ) : (

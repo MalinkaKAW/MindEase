@@ -163,7 +163,7 @@ export const DetailsScreen: React.FC<{ route: any; navigation: any }> = ({
         ]}
       >
         <Text style={[styles.sectionTitle, { color: colorScheme.text }]}>
-          🫁 Guided Breathing Exercise
+          🫁 Guided Breathing Exercise 🧘
         </Text>
 
         <View style={styles.breathingContainer}>
@@ -211,7 +211,7 @@ export const DetailsScreen: React.FC<{ route: any; navigation: any }> = ({
         ]}
       >
         <Text style={[styles.sectionTitle, { color: colorScheme.text }]}>
-          💡 Tips
+          ⭐ Tips for Best Results
         </Text>
         <View style={styles.tipsList}>
           <View style={styles.tipItem}>

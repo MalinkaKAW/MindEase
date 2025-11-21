@@ -69,9 +69,9 @@ export const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
-          <Text style={styles.icon}>🧘</Text>
+          <Text style={styles.icon}>🧘‍♂️</Text>
           <Text style={styles.title}>MindEase</Text>
-          <Text style={styles.subtitle}>Your Personal Meditation Companion</Text>
+          <Text style={styles.subtitle}>✨ Your Personal Meditation Companion 🌟</Text>
         </View>
 
         <View style={styles.form}>

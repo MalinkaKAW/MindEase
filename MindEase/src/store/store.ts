@@ -9,6 +9,16 @@ import themeReducer from '../slices/themeSlice';
 // Check if we're running on web
 const isWeb = typeof window !== 'undefined';
 
+// Clear browser storage on web to reset auth state
+if (isWeb && typeof window !== 'undefined') {
+  try {
+    localStorage.clear();
+    sessionStorage.clear();
+  } catch (e) {
+    // Ignore errors
+  }
+}
+
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
