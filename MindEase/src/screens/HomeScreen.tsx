@@ -217,10 +217,10 @@ const styles = StyleSheet.create({
     opacity: 0.7,
   },
   sectionHeader: {
-    fontSize: 18,
-    fontWeight: '600',
+    fontSize: 24,
+    fontWeight: '700',
     marginBottom: Spacing.lg,
-    marginTop: Spacing.lg,
+    marginTop: Spacing.xxl,
     paddingHorizontal: Spacing.lg,
     letterSpacing: -0.3,
   },
@@ -229,11 +229,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: Spacing.lg,
     marginTop: Spacing.lg,
-    marginBottom: Spacing.md,
+    marginBottom: Spacing.xl,
   },
   sectionHeaderImage: {
-    width: 28,
-    height: 28,
+    width: 40,
+    height: 40,
     marginRight: Spacing.md,
   },
   centerContainer: {
