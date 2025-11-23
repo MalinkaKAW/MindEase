@@ -1,29 +1,29 @@
 export const Colors = {
   light: {
-    primary: '#8B7355',      // Warm brown
-    secondary: '#C9AE89',    // Soft tan
-    accent: '#E8D5C4',       // Cream
-    background: '#F9F7F4',   // Warm off-white
+    primary: '#6B5B95',      // Soft purple
+    secondary: '#C7B3D5',    // Light purple
+    accent: '#FFB6C1',       // Light pink
+    background: '#F8F7F4',   // Cream white
     card: '#FFFFFF',
-    text: '#3D2817',         // Dark brown
-    textSecondary: '#8B7355', // Medium brown
-    border: '#E8D5C4',       // Cream border
-    success: '#6BA384',      // Sage green
-    warning: '#C9AE89',      // Tan
-    error: '#D4847B',        // Muted rose
+    text: '#2D2D44',         // Dark purple-gray
+    textSecondary: '#8B7BA8', // Medium purple
+    border: '#E8E3F0',       // Light purple border
+    success: '#A8D8A8',      // Soft green
+    warning: '#FFE5B4',      // Peach
+    error: '#FFB3BA',        // Soft red
   },
   dark: {
-    primary: '#C9AE89',      // Soft tan
-    secondary: '#A89678',    // Medium tan
-    accent: '#E8D5C4',       // Cream
-    background: '#2D2117',   // Dark brown
-    card: '#3D2817',         // Slightly lighter brown
-    text: '#F9F7F4',         // Warm off-white
-    textSecondary: '#C9AE89', // Soft tan
-    border: '#4D3D2D',       // Dark border
-    success: '#6BA384',      // Sage green
-    warning: '#C9AE89',      // Tan
-    error: '#D4847B',        // Muted rose
+    primary: '#9B8EC7',      // Light purple
+    secondary: '#C7B3D5',    // Light purple
+    accent: '#FFB6C1',       // Light pink
+    background: '#2D2544',   // Dark purple
+    card: '#3D3555',         // Slightly lighter dark
+    text: '#F8F7F4',         // Cream white
+    textSecondary: '#C7B3D5', // Light purple
+    border: '#4D4565',       // Dark border
+    success: '#A8D8A8',      // Soft green
+    warning: '#FFE5B4',      // Peach
+    error: '#FFB3BA',        // Soft red
   },
 };
 

@@ -138,14 +138,14 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       <View
         style={[
           styles.header,
-          { backgroundColor: '#E8D5C4' },
+          { backgroundColor: '#FFF0F5' },
         ]}
       >
-        <Text style={[styles.headerTitle, { color: '#3D2817' }]}>
-          Hello, {user?.username || 'Friend'}
+        <Text style={[styles.headerTitle, { color: '#2D2D44' }]}>
+          Hi, {user?.username || 'Friend'}
         </Text>
-        <Text style={[styles.headerSubtitle, { color: '#8B7355' }]}>
-          ✨ Find your inner peace today
+        <Text style={[styles.headerSubtitle, { color: '#8B7BA8' }]}>
+          Ready to begin? ✨
         </Text>
       </View>
 
@@ -260,7 +260,8 @@ const styles = StyleSheet.create({
   },
   card: {
     marginBottom: Spacing.lg,
-    borderRadius: BorderRadius.xl,
+    marginHorizontal: Spacing.sm,
+    borderRadius: 24,
     borderWidth: 0,
     overflow: 'hidden',
     ...Shadows.medium,
