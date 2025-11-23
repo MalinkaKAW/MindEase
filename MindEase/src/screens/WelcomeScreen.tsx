@@ -14,15 +14,11 @@ export const WelcomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
   const isDarkMode = useSelector((state: RootState) => state.theme.isDarkMode);
   const colorScheme = isDarkMode ? Colors.dark : Colors.light;
   return (
-    <View style={styles.screenContainer}>
-      {/* Background Layer */}
-      <View style={styles.backgroundLayer} />
-      
-      <ScrollView
-        style={styles.container}
-        contentContainerStyle={styles.scrollContent}
-        showsVerticalScrollIndicator={false}
-      >
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.scrollContent}
+      showsVerticalScrollIndicator={false}
+    >
       {/* Main Welcome Section */}
       <View style={[
         styles.mainSection,
@@ -58,25 +54,10 @@ export const WelcomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
         </TouchableOpacity>
       </View>
     </ScrollView>
-    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  screenContainer: {
-    flex: 1,
-    backgroundColor: '#F8F7F4',
-  },
-  backgroundLayer: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: '55%',
-    backgroundColor: '#E8DFF5',
-    opacity: 1,
-    zIndex: 0,
-  },
   container: {
     flex: 1,
     backgroundColor: '#F8F7F4',

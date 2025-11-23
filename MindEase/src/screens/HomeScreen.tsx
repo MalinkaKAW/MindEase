@@ -127,70 +127,64 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      {/* Floral Background Layer */}
-      <View style={styles.backgroundLayer} />
-      
-      {/* Content Wrapper */}
-      <View style={styles.contentWrapper}>
-        <View
-          style={[
-            styles.header,
-            { backgroundColor: isDarkMode ? '#3D3555' : '#FFF0F5' },
-          ]}
-        >
-          <Text style={[styles.headerTitle, { color: colorScheme.text }]}>
-            Hi, {user?.username || 'Friend'}
-          </Text>
-          <Text style={[styles.headerSubtitle, { color: colorScheme.textSecondary }]}>
-            Ready to begin? ✨
+      <View
+        style={[
+          styles.header,
+          { backgroundColor: isDarkMode ? '#3D3555' : '#FFF0F5' },
+        ]}
+      >
+        <Text style={[styles.headerTitle, { color: colorScheme.text }]}>
+          Hi, {user?.username || 'Friend'}
+        </Text>
+        <Text style={[styles.headerSubtitle, { color: colorScheme.textSecondary }]}>
+          Ready to begin? ✨
+        </Text>
+      </View>
+
+      {isLoading && tips.length === 0 ? (
+        <View style={styles.centerContainer}>
+          <ActivityIndicator size="large" color={colorScheme.primary} />
+          <Text style={[styles.loadingText, { color: colorScheme.text }]}>
+            Loading wellness tips...
           </Text>
         </View>
-
-        {isLoading && tips.length === 0 ? (
-          <View style={styles.centerContainer}>
-            <ActivityIndicator size="large" color={colorScheme.primary} />
-            <Text style={[styles.loadingText, { color: colorScheme.text }]}>
-              Loading wellness tips...
+      ) : (
+        <>
+          <View style={styles.sectionHeaderContainer}>
+            <Image
+              source={images.tips}
+              style={styles.sectionHeaderImage}
+            />
+            <Text style={[styles.sectionHeader, { color: colorScheme.text }]}>
+              Wellness Tips
             </Text>
           </View>
-        ) : (
-          <>
-            <View style={styles.sectionHeaderContainer}>
-              <Image
-                source={images.tips}
-                style={styles.sectionHeaderImage}
+          <FlatList
+            data={tips}
+            keyExtractor={(item) => item.id}
+            numColumns={2}
+            columnWrapperStyle={styles.columnWrapper}
+            renderItem={({ item }) => (
+              <MeditationCard
+                item={item}
+                onPress={() => navigation.navigate('Details', { tip: item })}
+                onFavouritePress={() => handleFavouritePress(item)}
+                isFavourite={isFavourite(item.id)}
+                isDarkMode={isDarkMode}
               />
-              <Text style={[styles.sectionHeader, { color: colorScheme.text }]}>
-                Wellness Tips
-              </Text>
-            </View>
-            <FlatList
-              data={tips}
-              keyExtractor={(item) => item.id}
-              numColumns={2}
-              columnWrapperStyle={styles.columnWrapper}
-              renderItem={({ item }) => (
-                <MeditationCard
-                  item={item}
-                  onPress={() => navigation.navigate('Details', { tip: item })}
-                  onFavouritePress={() => handleFavouritePress(item)}
-                  isFavourite={isFavourite(item.id)}
-                  isDarkMode={isDarkMode}
-                />
-              )}
-              contentContainerStyle={styles.listContent}
-              refreshControl={
-                <RefreshControl
-                  refreshing={refreshing}
-                  onRefresh={onRefresh}
-                  tintColor={colorScheme.primary}
-                />
-              }
-              showsVerticalScrollIndicator={false}
-            />
-          </>
-        )}
-      </View>
+            )}
+            contentContainerStyle={styles.listContent}
+            refreshControl={
+              <RefreshControl
+                refreshing={refreshing}
+                onRefresh={onRefresh}
+                tintColor={colorScheme.primary}
+              />
+            }
+            showsVerticalScrollIndicator={false}
+          />
+        </>
+      )}
     </View>
   );
 };
@@ -199,19 +193,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F8F7F4',
-  },
-  backgroundLayer: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: '55%',
-    backgroundColor: '#E8DFF5',
-    opacity: 1,
-    zIndex: 0,
-  },
-  contentWrapper: {
-    flex: 1,
   },
   header: {
     paddingHorizontal: Spacing.lg,

@@ -48,15 +48,11 @@ export const ProfileScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
   };
 
   return (
-    <View style={[styles.screenContainer, { backgroundColor: colorScheme.background }]}>
-      {/* Background Layer */}
-      <View style={[styles.backgroundLayer, { backgroundColor: isDarkMode ? '#2D2D44' : '#E8DFF5' }]} />
-      
-      <ScrollView
-        style={[
-          styles.container,
-          { backgroundColor: colorScheme.background },
-        ]}
+    <ScrollView
+      style={[
+        styles.container,
+        { backgroundColor: colorScheme.background },
+      ]}
       contentContainerStyle={styles.contentContainer}
       showsVerticalScrollIndicator={false}
     >
@@ -200,23 +196,10 @@ export const ProfileScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
         <Text style={styles.logoutButtonText}>Logout</Text>
       </TouchableOpacity>
     </ScrollView>
-    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  screenContainer: {
-    flex: 1,
-  },
-  backgroundLayer: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: '55%',
-    opacity: 1,
-    zIndex: 0,
-  },
   container: {
     flex: 1,
   },
