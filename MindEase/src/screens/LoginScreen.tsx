@@ -68,10 +68,14 @@ export const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-        <View style={styles.header}>
-          <Text style={styles.icon}>🧘‍♂️</Text>
-          <Text style={styles.title}>MindEase</Text>
-          <Text style={styles.subtitle}>✨ Your Personal Meditation Companion 🌟</Text>
+        {/* Welcome Section with Background */}
+        <View style={styles.welcomeSection}>
+          <View style={styles.illustrationContainer}>
+            <Text style={styles.illustration}>🧘‍♀️</Text>
+          </View>
+          <Text style={styles.welcomeTitle}>Welcome to</Text>
+          <Text style={styles.appName}>MindEase</Text>
+          <Text style={styles.tagline}>Your Personal Meditation Companion</Text>
         </View>
 
         <View style={styles.form}>
@@ -80,6 +84,7 @@ export const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
             <TextInput
               style={[styles.input, errors.username && styles.inputError]}
               placeholder="Enter your username"
+              placeholderTextColor="#C7B3D5"
               value={username}
               onChangeText={setUsername}
               editable={!isLoading}
@@ -92,6 +97,7 @@ export const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
             <TextInput
               style={[styles.input, errors.password && styles.inputError]}
               placeholder="Enter your password"
+              placeholderTextColor="#C7B3D5"
               value={password}
               onChangeText={setPassword}
               secureTextEntry
@@ -141,6 +147,45 @@ const styles = StyleSheet.create({
   scrollContent: {
     flexGrow: 1,
     paddingVertical: Spacing.xxl,
+  },
+  welcomeSection: {
+    alignItems: 'center',
+    marginBottom: Spacing.xxxl,
+    paddingHorizontal: Spacing.lg,
+    paddingVertical: Spacing.xxxl,
+    backgroundColor: '#FFF0F5',
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
+  },
+  illustrationContainer: {
+    width: 120,
+    height: 120,
+    backgroundColor: 'rgba(107, 91, 149, 0.1)',
+    borderRadius: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: Spacing.lg,
+  },
+  illustration: {
+    fontSize: 60,
+  },
+  welcomeTitle: {
+    fontSize: 16,
+    color: '#8B7BA8',
+    fontWeight: '500',
+    marginBottom: Spacing.sm,
+  },
+  appName: {
+    fontSize: 32,
+    fontWeight: '700',
+    color: '#2D2D44',
+    marginBottom: Spacing.md,
+    letterSpacing: 0.5,
+  },
+  tagline: {
+    fontSize: 14,
+    color: '#8B7BA8',
+    fontWeight: '500',
   },
   header: {
     alignItems: 'center',
@@ -205,7 +250,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: Colors.light.primary,
     paddingVertical: Spacing.lg,
-    borderRadius: BorderRadius.xl,
+    borderRadius: 50,
     alignItems: 'center',
     marginBottom: Spacing.lg,
   },
