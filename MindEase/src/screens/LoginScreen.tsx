@@ -89,7 +89,7 @@ export const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
             <TextInput
               style={[styles.input, errors.username && styles.inputError]}
               placeholder="Enter your username"
-              placeholderTextColor="#C7B3D5"
+              placeholderTextColor={isDarkMode ? '#8B7BA8' : '#C7B3D5'}
               value={username}
               onChangeText={setUsername}
               editable={!isLoading}
@@ -102,7 +102,7 @@ export const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
             <TextInput
               style={[styles.input, errors.password && styles.inputError]}
               placeholder="Enter your password"
-              placeholderTextColor="#C7B3D5"
+              placeholderTextColor={isDarkMode ? '#8B7BA8' : '#C7B3D5'}
               value={password}
               onChangeText={setPassword}
               secureTextEntry

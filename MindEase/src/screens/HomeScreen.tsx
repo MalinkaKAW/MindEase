@@ -60,21 +60,21 @@ const MeditationCard: React.FC<{
       {/* Card Content */}
       <View style={styles.cardContent}>
         <Text
-          style={[styles.category, { color: colorScheme.primary }]}
+          style={[styles.category, { color: isDarkMode ? '#FFB6C1' : colorScheme.primary }]}
           numberOfLines={1}
         >
           {item.category}
         </Text>
         
         <Text
-          style={[styles.quote, { color: colorScheme.text }]}
+          style={[styles.quote, { color: isDarkMode ? '#F8F7F4' : colorScheme.text }]}
           numberOfLines={2}
         >
           {item.quote}
         </Text>
 
         <Text
-          style={[styles.level, { color: colorScheme.textSecondary }]}
+          style={[styles.level, { color: isDarkMode ? '#E8DFF5' : colorScheme.textSecondary }]}
           numberOfLines={1}
         >
           {item.level}
