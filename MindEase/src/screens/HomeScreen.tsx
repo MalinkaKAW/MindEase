@@ -129,9 +129,11 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     <View
       style={[
         styles.container,
-        { backgroundColor: colorScheme.background },
       ]}
     >
+      {/* Floral Background Layer */}
+      <View style={styles.backgroundLayer} />
+      
       <View
         style={[
           styles.header,
@@ -178,7 +180,7 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
               isDarkMode={isDarkMode}
             />
           )}
-          contentContainerStyle={styles.listContent}
+          contentContainerStyle={[styles.listContent, { zIndex: 1 }]}
           refreshControl={
             <RefreshControl
               refreshing={refreshing}
@@ -197,11 +199,23 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#F8F7F4',
+  },
+  backgroundLayer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: '40%',
+    backgroundColor: '#F5F0FA',
+    opacity: 0.6,
+    zIndex: 0,
   },
   header: {
     paddingHorizontal: Spacing.lg,
     paddingVertical: Spacing.xl,
     borderBottomWidth: 0,
+    zIndex: 1,
   },
   headerEmoji: {
     fontSize: 48,
