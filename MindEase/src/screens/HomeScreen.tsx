@@ -138,13 +138,13 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       <View
         style={[
           styles.header,
-          { backgroundColor: '#E8F5E9' },
+          { backgroundColor: '#E8D5C4' },
         ]}
       >
-        <Text style={[styles.headerTitle, { color: '#1B5E20' }]}>
+        <Text style={[styles.headerTitle, { color: '#3D2817' }]}>
           Hello, {user?.username || 'Friend'}
         </Text>
-        <Text style={[styles.headerSubtitle, { color: '#558B2F' }]}>
+        <Text style={[styles.headerSubtitle, { color: '#8B7355' }]}>
           ✨ Find your inner peace today
         </Text>
       </View>

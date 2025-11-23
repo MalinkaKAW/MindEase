@@ -1,29 +1,29 @@
 export const Colors = {
   light: {
-    primary: '#4F9FD8',      // Soft calming blue
-    secondary: '#7B68B6',    // Soft purple
-    accent: '#B5A7E0',       // Light lavender
-    background: '#F5F7FA',   // Soft off-white
+    primary: '#8B7355',      // Warm brown
+    secondary: '#C9AE89',    // Soft tan
+    accent: '#E8D5C4',       // Cream
+    background: '#F9F7F4',   // Warm off-white
     card: '#FFFFFF',
-    text: '#2C3E50',         // Dark slate
-    textSecondary: '#7F8C8D', // Medium gray
-    border: '#E8EEF5',       // Light blue-gray
-    success: '#27AE60',      // Calm green
-    warning: '#E8A741',      // Soft gold
-    error: '#E57373',        // Soft red
+    text: '#3D2817',         // Dark brown
+    textSecondary: '#8B7355', // Medium brown
+    border: '#E8D5C4',       // Cream border
+    success: '#6BA384',      // Sage green
+    warning: '#C9AE89',      // Tan
+    error: '#D4847B',        // Muted rose
   },
   dark: {
-    primary: '#5DADE2',      // Soft blue
-    secondary: '#9B8DC8',    // Soft purple
-    accent: '#C8B8E0',       // Light lavender
-    background: '#1A1F2E',   // Dark slate
-    card: '#2D3748',         // Slightly lighter dark
-    text: '#E8EEF5',         // Light blue-gray
-    textSecondary: '#A0AEC0', // Muted gray
-    border: '#3D4556',       // Dark border
-    success: '#48BB78',      // Soft green
-    warning: '#F6AD55',      // Soft orange
-    error: '#FC8181',        // Soft red
+    primary: '#C9AE89',      // Soft tan
+    secondary: '#A89678',    // Medium tan
+    accent: '#E8D5C4',       // Cream
+    background: '#2D2117',   // Dark brown
+    card: '#3D2817',         // Slightly lighter brown
+    text: '#F9F7F4',         // Warm off-white
+    textSecondary: '#C9AE89', // Soft tan
+    border: '#4D3D2D',       // Dark border
+    success: '#6BA384',      // Sage green
+    warning: '#C9AE89',      // Tan
+    error: '#D4847B',        // Muted rose
   },
 };
 
