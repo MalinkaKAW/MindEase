@@ -345,8 +345,10 @@ const styles = StyleSheet.create({
   },
   breathButton: {
     paddingVertical: Spacing.lg,
-    borderRadius: BorderRadius.xl,
+    paddingHorizontal: Spacing.xl,
+    borderRadius: 50,
     alignItems: 'center',
+    marginHorizontal: Spacing.lg,
   },
   breathButtonText: {
     color: '#fff',
