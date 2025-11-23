@@ -230,11 +230,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.lg,
     marginTop: Spacing.lg,
     marginBottom: Spacing.xl,
+    gap: Spacing.md,
   },
   sectionHeaderImage: {
-    width: 112,
-    height: 112,
-    marginRight: Spacing.sm,
+    width: 48,
+    height: 48,
+    marginRight: Spacing.md,
   },
   centerContainer: {
     flex: 1,
