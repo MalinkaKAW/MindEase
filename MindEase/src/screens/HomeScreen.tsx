@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
   sectionHeaderImage: {
     width: 112,
     height: 112,
-    marginRight: Spacing.md,
+    marginRight: Spacing.sm,
   },
   centerContainer: {
     flex: 1,
