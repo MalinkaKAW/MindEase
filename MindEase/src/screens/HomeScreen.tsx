@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
     height: 100,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(107, 91, 149, 0.08)',
+    backgroundColor: 'rgba(139, 123, 168, 0.15)',
   },
   cardIcon: {
     fontSize: 48,
@@ -300,15 +300,14 @@ const styles = StyleSheet.create({
   },
   quote: {
     fontSize: 14,
-    fontWeight: '500',
+    fontWeight: '600',
     marginBottom: Spacing.sm,
     lineHeight: 20,
-    letterSpacing: 0.2,
+    letterSpacing: 0.3,
   },
   level: {
     fontSize: 11,
     fontWeight: '500',
-    opacity: 0.7,
   },
   favouriteBtn: {
     padding: Spacing.sm,
