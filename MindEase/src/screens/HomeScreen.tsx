@@ -126,7 +126,7 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: isDarkMode ? colorScheme.background : '#F8F7F4' }]}>
       <View
         style={[
           styles.header,
@@ -155,7 +155,7 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
               source={images.tips}
               style={styles.sectionHeaderImage}
             />
-            <Text style={[styles.sectionHeader, { color: isDarkMode ? '#F8F7F4' : '#2D2D44' }]}>
+            <Text style={[styles.sectionHeader, { color: colorScheme.text }]}>
               Wellness Tips
             </Text>
           </View>
