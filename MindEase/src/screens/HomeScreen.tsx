@@ -134,12 +134,14 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       {/* Floral Background Layer */}
       <View style={styles.backgroundLayer} />
       
-      <View
-        style={[
-          styles.header,
-          { backgroundColor: '#FFF0F5' },
-        ]}
-      >
+      {/* Content Wrapper */}
+      <View style={styles.contentWrapper}>
+        <View
+          style={[
+            styles.header,
+            { backgroundColor: '#FFF0F5' },
+          ]}
+        >
         <Text style={[styles.headerTitle, { color: '#2D2D44' }]}>
           Hi, {user?.username || 'Friend'}
         </Text>
@@ -192,6 +194,7 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         />
         </>
       )}
+      </View>
     </View>
   );
 };
@@ -210,6 +213,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F0FA',
     opacity: 0.6,
     zIndex: 0,
+  },
+  contentWrapper: {
+    flex: 1,
+    zIndex: 1,
   },
   header: {
     paddingHorizontal: Spacing.lg,
