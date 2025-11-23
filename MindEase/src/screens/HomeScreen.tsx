@@ -39,48 +39,45 @@ const MeditationCard: React.FC<{
       onPress={onPress}
       activeOpacity={0.7}
     >
-      <View style={styles.cardContent}>
-        <View style={styles.cardHeader}>
-          <Text style={styles.icon}>{item.icon}</Text>
-          <View style={{ flex: 1 }}>
-            <Text
-              style={[
-                styles.category,
-                { color: colorScheme.primary },
-              ]}
-              numberOfLines={1}
-            >
-              {item.category} • {item.level}
-            </Text>
-          </View>
-          <TouchableOpacity onPress={onFavouritePress} style={styles.favouriteBtn}>
-            <Heart
-              width={20}
-              height={20}
-              color={isFavourite ? Colors.light.error : colorScheme.textSecondary}
-              fill={isFavourite ? Colors.light.error : 'none'}
-            />
-          </TouchableOpacity>
-        </View>
+      {/* Card Icon/Avatar */}
+      <View style={styles.cardIconContainer}>
+        <Text style={styles.cardIcon}>{item.icon}</Text>
+      </View>
 
+      {/* Favorite Button */}
+      <TouchableOpacity 
+        onPress={onFavouritePress} 
+        style={[styles.favouriteBtn, { position: 'absolute', top: 8, right: 8, zIndex: 10 }]}
+      >
+        <Heart
+          width={18}
+          height={18}
+          color={isFavourite ? Colors.light.error : colorScheme.textSecondary}
+          fill={isFavourite ? Colors.light.error : 'none'}
+        />
+      </TouchableOpacity>
+
+      {/* Card Content */}
+      <View style={styles.cardContent}>
         <Text
-          style={[
-            styles.quote,
-            { color: colorScheme.text },
-          ]}
-          numberOfLines={3}
+          style={[styles.category, { color: colorScheme.primary }]}
+          numberOfLines={1}
+        >
+          {item.category}
+        </Text>
+        
+        <Text
+          style={[styles.quote, { color: colorScheme.text }]}
+          numberOfLines={2}
         >
           {item.quote}
         </Text>
 
         <Text
-          style={[
-            styles.author,
-            { color: colorScheme.textSecondary },
-          ]}
+          style={[styles.level, { color: colorScheme.textSecondary }]}
           numberOfLines={1}
         >
-          — {item.author}
+          {item.level}
         </Text>
       </View>
     </TouchableOpacity>
@@ -170,6 +167,8 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           <FlatList
           data={tips}
           keyExtractor={(item) => item.id}
+          numColumns={2}
+          columnWrapperStyle={styles.columnWrapper}
           renderItem={({ item }) => (
             <MeditationCard
               item={item}
@@ -255,19 +254,36 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   listContent: {
-    paddingHorizontal: Spacing.lg,
+    paddingHorizontal: Spacing.sm,
     paddingVertical: Spacing.lg,
   },
+  columnWrapper: {
+    justifyContent: 'space-between',
+    marginBottom: Spacing.md,
+  },
   card: {
-    marginBottom: Spacing.lg,
+    flex: 1,
     marginHorizontal: Spacing.sm,
-    borderRadius: 24,
+    marginBottom: Spacing.lg,
+    borderRadius: 20,
     borderWidth: 0,
     overflow: 'hidden',
     ...Shadows.medium,
+    maxWidth: '48%',
+  },
+  cardIconContainer: {
+    width: '100%',
+    height: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(107, 91, 149, 0.08)',
+  },
+  cardIcon: {
+    fontSize: 48,
   },
   cardContent: {
-    padding: Spacing.lg,
+    padding: Spacing.md,
+    paddingTop: Spacing.md,
   },
   cardHeader: {
     flexDirection: 'row',
@@ -279,21 +295,28 @@ const styles = StyleSheet.create({
     marginRight: Spacing.lg,
   },
   category: {
-    fontSize: 12,
+    fontSize: 11,
     fontWeight: '600',
     textTransform: 'uppercase',
     letterSpacing: 0.5,
+    marginBottom: Spacing.sm,
+  },
+  quote: {
+    fontSize: 14,
+    fontWeight: '500',
+    marginBottom: Spacing.sm,
+    lineHeight: 20,
+    letterSpacing: 0.2,
+  },
+  level: {
+    fontSize: 11,
+    fontWeight: '500',
+    opacity: 0.7,
   },
   favouriteBtn: {
     padding: Spacing.sm,
     marginLeft: 'auto',
-  },
-  quote: {
-    fontSize: 16,
-    fontWeight: '500',
-    marginBottom: Spacing.md,
-    lineHeight: 26,
-    letterSpacing: 0.3,
+    zIndex: 10,
   },
   author: {
     fontSize: 12,
