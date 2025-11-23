@@ -41,10 +41,7 @@ const MeditationCard: React.FC<{
     >
       <View style={styles.cardContent}>
         <View style={styles.cardHeader}>
-          <Image
-            source={images.tips}
-            style={styles.cardIcon}
-          />
+          <Text style={styles.icon}>{item.icon}</Text>
           <View style={{ flex: 1 }}>
             <Text
               style={[
@@ -141,13 +138,13 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       <View
         style={[
           styles.header,
-          { backgroundColor: colorScheme.card },
+          { backgroundColor: '#E8F5E9' },
         ]}
       >
-        <Text style={[styles.headerTitle, { color: colorScheme.text }]}>
+        <Text style={[styles.headerTitle, { color: '#1B5E20' }]}>
           Hello, {user?.username || 'Friend'}
         </Text>
-        <Text style={[styles.headerSubtitle, { color: colorScheme.textSecondary }]}>
+        <Text style={[styles.headerSubtitle, { color: '#558B2F' }]}>
           ✨ Find your inner peace today
         </Text>
       </View>
@@ -278,11 +275,6 @@ const styles = StyleSheet.create({
   },
   icon: {
     fontSize: 32,
-    marginRight: Spacing.lg,
-  },
-  cardIcon: {
-    width: 40,
-    height: 40,
     marginRight: Spacing.lg,
   },
   category: {
