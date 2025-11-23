@@ -232,9 +232,9 @@ const styles = StyleSheet.create({
     marginBottom: Spacing.xl,
   },
   sectionHeaderImage: {
-    width: 56,
-    height: 56,
-    marginRight: Spacing.lg,
+    width: 112,
+    height: 112,
+    marginRight: Spacing.md,
   },
   centerContainer: {
     flex: 1,
