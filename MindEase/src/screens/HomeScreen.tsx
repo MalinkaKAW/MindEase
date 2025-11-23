@@ -226,15 +226,16 @@ const styles = StyleSheet.create({
   },
   sectionHeaderContainer: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
-    paddingHorizontal: Spacing.lg,
-    marginTop: Spacing.lg,
-    marginBottom: Spacing.xl,
-    gap: Spacing.lg,
+    alignItems: 'center',
+    paddingHorizontal: Spacing.xs,
+    marginTop: Spacing.xs,
+    marginBottom: Spacing.xs,
   },
   sectionHeaderImage: {
-    width: 48,
-    height: 48,
+    width: 112,
+    height: 112,
+    marginRight: Spacing.xs,
+    marginLeft: -Spacing.xs,
   },
   centerContainer: {
     flex: 1,
