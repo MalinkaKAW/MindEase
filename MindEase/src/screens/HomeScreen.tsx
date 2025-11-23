@@ -141,10 +141,6 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           { backgroundColor: colorScheme.card },
         ]}
       >
-        <Image
-          source={images.meditation}
-          style={styles.headerImage}
-        />
         <Text style={[styles.headerTitle, { color: colorScheme.text }]}>
           Hello, {user?.username || 'Friend'}
         </Text>
@@ -216,12 +212,6 @@ const styles = StyleSheet.create({
     fontSize: 48,
     marginBottom: Spacing.md,
     textAlign: 'center',
-  },
-  headerImage: {
-    width: 80,
-    height: 80,
-    marginBottom: Spacing.md,
-    alignSelf: 'center',
   },
   headerTitle: {
     fontSize: 24,
