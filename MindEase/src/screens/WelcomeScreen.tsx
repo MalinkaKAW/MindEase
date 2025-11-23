@@ -34,25 +34,6 @@ export const WelcomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
         </Text>
       </View>
 
-      {/* Features Section */}
-      <View style={styles.featuresSection}>
-        <FeatureCard
-          icon="🎯"
-          title="Guided Meditations"
-          description="Personalized meditation sessions for every mood"
-        />
-        <FeatureCard
-          icon="🫁"
-          title="Breathing Exercises"
-          description="Learn calming breathing techniques"
-        />
-        <FeatureCard
-          icon="❤️"
-          title="Track Progress"
-          description="Save your favorite sessions and track your journey"
-        />
-      </View>
-
       {/* CTA Buttons */}
       <View style={styles.buttonSection}>
         <TouchableOpacity
@@ -70,22 +51,6 @@ export const WelcomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
         </TouchableOpacity>
       </View>
     </ScrollView>
-    </View>
-  );
-};
-
-interface FeatureCardProps {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => {
-  return (
-    <View style={styles.featureCard}>
-      <Text style={styles.featureIcon}>{icon}</Text>
-      <Text style={styles.featureTitle}>{title}</Text>
-      <Text style={styles.featureDescription}>{description}</Text>
     </View>
   );
 };
@@ -155,38 +120,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 22,
     marginBottom: Spacing.md,
-  },
-  featuresSection: {
-    paddingHorizontal: Spacing.lg,
-    marginBottom: Spacing.xxxl,
-  },
-  featureCard: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 20,
-    padding: Spacing.lg,
-    marginBottom: Spacing.lg,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
-    shadowRadius: 8,
-    elevation: 3,
-  },
-  featureIcon: {
-    fontSize: 48,
-    marginBottom: Spacing.md,
-  },
-  featureTitle: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#2D2D44',
-    marginBottom: Spacing.sm,
-  },
-  featureDescription: {
-    fontSize: 13,
-    color: '#8B7BA8',
-    textAlign: 'center',
-    lineHeight: 18,
   },
   buttonSection: {
     paddingHorizontal: Spacing.lg,
