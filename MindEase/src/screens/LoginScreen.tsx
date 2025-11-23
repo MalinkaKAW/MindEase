@@ -10,8 +10,8 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
 } from 'react-native';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../store/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../store/store';
 import { setLoading, loginSuccess, loginFailure } from '../slices/authSlice';
 import { authService } from '../services';
 import { storageService } from '../services/storageService';
@@ -20,6 +20,8 @@ import { Colors, Spacing, BorderRadius } from '../styles/theme';
 
 export const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const dispatch = useDispatch<AppDispatch>();
+  const isDarkMode = useSelector((state: RootState) => state.theme.isDarkMode);
+  const colorScheme = isDarkMode ? Colors.dark : Colors.light;
   const [username, setUsername] = useState('emilys');
   const [password, setPassword] = useState('emilyspass');
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -72,13 +74,16 @@ export const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         {/* Welcome Section with Background */}
-        <View style={styles.welcomeSection}>
+        <View style={[
+          styles.welcomeSection,
+          { backgroundColor: isDarkMode ? '#3D3555' : '#FFF0F5' }
+        ]}>
           <View style={styles.illustrationContainer}>
             <Text style={styles.illustration}>🧘‍♀️</Text>
           </View>
-          <Text style={styles.welcomeTitle}>Welcome to</Text>
-          <Text style={styles.appName}>MindEase</Text>
-          <Text style={styles.tagline}>Your Personal Meditation Companion</Text>
+          <Text style={[styles.welcomeTitle, { color: colorScheme.text }]}>Welcome to</Text>
+          <Text style={[styles.appName, { color: colorScheme.primary }]}>MindEase</Text>
+          <Text style={[styles.tagline, { color: colorScheme.textSecondary }]}>Your Personal Meditation Companion</Text>
         </View>
 
         <View style={styles.form}>

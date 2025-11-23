@@ -6,9 +6,13 @@ import {
   StyleSheet,
   ScrollView,
 } from 'react-native';
-import { Spacing } from '../styles/theme';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
+import { Colors, Spacing } from '../styles/theme';
 
 export const WelcomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
+  const isDarkMode = useSelector((state: RootState) => state.theme.isDarkMode);
+  const colorScheme = isDarkMode ? Colors.dark : Colors.light;
   return (
     <View style={styles.screenContainer}>
       {/* Background Layer */}
@@ -20,16 +24,19 @@ export const WelcomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
         showsVerticalScrollIndicator={false}
       >
       {/* Main Welcome Section */}
-      <View style={styles.mainSection}>
+      <View style={[
+        styles.mainSection,
+        { backgroundColor: isDarkMode ? '#3D3555' : '#FFF0F5' }
+      ]}>
         <View style={styles.illustrationCircle}>
           <Text style={styles.largeIllustration}>🧘‍♀️</Text>
         </View>
         
-        <Text style={styles.welcomeHeading}>Welcome to MindEase</Text>
-        <Text style={styles.welcomeSubheading}>
+        <Text style={[styles.welcomeHeading, { color: colorScheme.text }]}>Welcome to MindEase</Text>
+        <Text style={[styles.welcomeSubheading, { color: colorScheme.text }]}>
           Your Personal Meditation Companion
         </Text>
-        <Text style={styles.description}>
+        <Text style={[styles.description, { color: colorScheme.textSecondary }]}>
           Find inner peace, reduce stress, and discover your best self through guided meditation and breathing exercises.
         </Text>
       </View>
