@@ -151,10 +151,6 @@ export const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
       {isLoading && tips.length === 0 ? (
         <View style={styles.centerContainer}>
-          <Image
-            source={images.breathing}
-            style={styles.loadingImage}
-          />
           <ActivityIndicator size="large" color={colorScheme.primary} />
           <Text style={[styles.loadingText, { color: colorScheme.text }]}>
             Loading wellness tips...
@@ -251,11 +247,6 @@ const styles = StyleSheet.create({
   },
   loadingEmoji: {
     fontSize: 64,
-    marginBottom: Spacing.lg,
-  },
-  loadingImage: {
-    width: 100,
-    height: 100,
     marginBottom: Spacing.lg,
   },
   loadingText: {
