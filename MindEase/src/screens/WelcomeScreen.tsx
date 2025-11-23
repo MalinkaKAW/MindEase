@@ -6,15 +6,19 @@ import {
   StyleSheet,
   ScrollView,
 } from 'react-native';
-import { Colors, Spacing } from '../styles/theme';
+import { Spacing } from '../styles/theme';
 
 export const WelcomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   return (
-    <ScrollView
-      style={styles.container}
-      contentContainerStyle={styles.scrollContent}
-      showsVerticalScrollIndicator={false}
-    >
+    <View style={styles.screenContainer}>
+      {/* Background Layer */}
+      <View style={styles.backgroundLayer} />
+      
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+      >
       {/* Main Welcome Section */}
       <View style={styles.mainSection}>
         <View style={styles.illustrationCircle}>
@@ -66,6 +70,7 @@ export const WelcomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => 
         </TouchableOpacity>
       </View>
     </ScrollView>
+    </View>
   );
 };
 
@@ -86,6 +91,20 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
 };
 
 const styles = StyleSheet.create({
+  screenContainer: {
+    flex: 1,
+    backgroundColor: '#F8F7F4',
+  },
+  backgroundLayer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: '55%',
+    backgroundColor: '#E8DFF5',
+    opacity: 1,
+    zIndex: 0,
+  },
   container: {
     flex: 1,
     backgroundColor: '#F8F7F4',

@@ -66,7 +66,10 @@ export const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   };
 
   return (
-    <KeyboardAvoidingView behavior="padding" style={styles.container}>
+    <KeyboardAvoidingView behavior="padding" style={styles.screenContainer}>
+      {/* Background Layer */}
+      <View style={styles.backgroundLayer} />
+      
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         {/* Welcome Section with Background */}
         <View style={styles.welcomeSection}>
@@ -140,6 +143,20 @@ export const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  screenContainer: {
+    flex: 1,
+    backgroundColor: Colors.light.background,
+  },
+  backgroundLayer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: '55%',
+    backgroundColor: '#E8DFF5',
+    opacity: 1,
+    zIndex: 0,
+  },
   container: {
     flex: 1,
     backgroundColor: Colors.light.background,
