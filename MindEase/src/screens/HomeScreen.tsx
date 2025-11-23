@@ -41,7 +41,10 @@ const MeditationCard: React.FC<{
     >
       <View style={styles.cardContent}>
         <View style={styles.cardHeader}>
-          <Text style={styles.icon}>{item.icon}</Text>
+          <Image
+            source={images.tips}
+            style={styles.cardIcon}
+          />
           <View style={{ flex: 1 }}>
             <Text
               style={[
@@ -275,6 +278,11 @@ const styles = StyleSheet.create({
   },
   icon: {
     fontSize: 32,
+    marginRight: Spacing.lg,
+  },
+  cardIcon: {
+    width: 40,
+    height: 40,
     marginRight: Spacing.lg,
   },
   category: {
